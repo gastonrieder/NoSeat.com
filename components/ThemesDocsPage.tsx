@@ -6,9 +6,11 @@ import { ThemesHeader } from "./ThemesHeader";
 import { DocsNav } from "./DocsNav";
 import { MobileMenuProvider } from "./MobileMenu";
 import { SideNav } from "./SideNav";
+import { PrimitivesSearchDesktop } from "./PrimitivesSearchDesktop";
 import { DocsPageWrapper } from "./DocsPageWrapper";
-import { EditPageLink } from "./EditPageLink";
 import { ThemesMobileMenu } from "./ThemesMobileMenu";
+import { Tips } from '../data/templates/tips';
+
 
 export function ThemesDocsPage({ children }: { children: React.ReactNode }) {
 	return (
@@ -19,14 +21,17 @@ export function ThemesDocsPage({ children }: { children: React.ReactNode }) {
 			<Flex>
 				<SideNav>
 					<Box pt="4" px="3" pb="9">
+						<Box mb="4">
+							<PrimitivesSearchDesktop />
+						</Box>
+
 						<DocsNav routes={themesRoutes} />
 					</Box>
 				</SideNav>
 
 				<DocsPageWrapper>
 					<Box data-algolia-page-scope>{children}</Box>
-					<DocsPagination allRoutes={allThemesRoutes} />
-					<EditPageLink />
+					<Tips/>
 				</DocsPageWrapper>
 			</Flex>
 		</MobileMenuProvider>

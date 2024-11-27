@@ -4,13 +4,10 @@ import { ExternalLinkIcon, Link2Icon } from "@radix-ui/react-icons";
 import { PropsTable } from "./PropsTable";
 import { KeyboardTable } from "./KeyboardTable";
 import { Highlights } from "./Highlights";
-import { HeroCodeBlock } from "./HeroCodeBlock";
 import { PackageRelease, PRLink } from "./releaseHelpers";
-import { HeroContainer } from "./HeroContainer";
 import { HeroQuote } from "./HeroQuote";
 import { Frontmatter } from "types/frontmatter";
 import { ColorScale, ColorScaleGroup } from "./Scale";
-import * as Demos from "./demos";
 import { CssVariablesTable } from "./CssVariablesTable";
 import { DataAttributesTable } from "./DataAttributesTable";
 import { CodeBlock } from "./CodeBlock";
@@ -37,7 +34,6 @@ export const components = {
 	ColorScale,
 	ColorScaleGroup,
 	Tabs,
-	HeroCodeBlock,
 	h1: (props: any) => (
 		<Heading asChild size="8" mb="2">
 			<h1 {...props} style={{ scrollMarginTop: "var(--space-9)" }} />
@@ -198,9 +194,7 @@ export const components = {
 	),
 	PackageRelease,
 	PRLink,
-	HeroContainer,
 	HeroQuote,
-	...Demos,
 };
 
 const LinkHeading = ({

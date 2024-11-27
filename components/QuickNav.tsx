@@ -89,3 +89,5 @@ export function QuickNav({ title = "Quick nav" }: { title?: string }) {
 		</Box>
 	);
 }
+
+

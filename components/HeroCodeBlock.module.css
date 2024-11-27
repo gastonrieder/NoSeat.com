@@ -1,4 +1,4 @@
-.HeroContainer {
+/* .HeroContainer {
 	background-image: linear-gradient(
 		330deg,
 		var(--purple-9) 0%,
@@ -60,4 +60,4 @@
 
 :global(:where(.dark, .dark-theme)) .CollapsibleGradient::before {
 	background: linear-gradient(180deg, transparent, var(--gray-1) 70%);
-}
+} */

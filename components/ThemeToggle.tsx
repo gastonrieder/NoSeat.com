@@ -1,57 +1,52 @@
 import React from "react";
 import { useTheme } from "next-themes";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
-import { IconButton, Tooltip } from "@radix-ui/themes";
+import { Switch, Flex } from "@radix-ui/themes";
 import Head from "next/head";
 
-export const ThemeToggle = ({
-	children,
-	...props
-}: React.ComponentPropsWithoutRef<typeof IconButton>) => {
-	const { theme, systemTheme, setTheme } = useTheme();
+export const ThemeToggle = () => {
+  const { theme, setTheme } = useTheme();
 
-	return (
-		<>
-			<Head>
-				<style>{`
-        :root, .light, .light-theme {
-          --theme-toggle-sun-icon-display: block;
-          --theme-toggle-moon-icon-display: none;
-        }
-        .dark, .dark-theme {
-          --theme-toggle-sun-icon-display: none;
-          --theme-toggle-moon-icon-display: block;
-        }
-      `}</style>
-			</Head>
+  React.useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
+  }, []);
 
-			<Tooltip className="radix-themes-custom-fonts" content="Toggle theme">
-				<IconButton
-					size="3"
-					variant="ghost"
-					color="gray"
-					aria-label="Toggle theme"
-					onClick={() => {
-						// Set 'system' theme if the next theme matches the system theme
-						const resolvedTheme = theme === "system" ? systemTheme : theme;
-						const newTheme = resolvedTheme === "dark" ? "light" : "dark";
-						const newThemeMatchesSystem = newTheme === systemTheme;
-						setTheme(newThemeMatchesSystem ? "system" : newTheme);
-					}}
-					{...props}
-				>
-					<SunIcon
-						width="16"
-						height="16"
-						style={{ display: "var(--theme-toggle-sun-icon-display)" }}
-					/>
-					<MoonIcon
-						width="16"
-						height="16"
-						style={{ display: "var(--theme-toggle-moon-icon-display)" }}
-					/>
-				</IconButton>
-			</Tooltip>
-		</>
-	);
+  return (
+    <>
+      <Head>
+        <style>{`
+          :root {
+            transition: background-color 0.3s ease, 
+                        color 0.3s ease,
+                        border-color 0.3s ease;
+          }
+          
+          :root, .light, .light-theme {
+            --theme-toggle-sun-icon-display: block;
+            --theme-toggle-moon-icon-display: none;
+          }
+          .dark, .dark-theme {
+            --theme-toggle-sun-icon-display: none;
+            --theme-toggle-moon-icon-display: block;
+          }
+        `}</style>
+      </Head>
+      <Flex align="center" gap="2">
+        <SunIcon width="16" height="16" />
+        <Switch 
+          size="2" 
+          checked={theme === 'dark'}
+          onCheckedChange={(checked) => {
+            const newTheme = checked ? 'dark' : 'light';
+            setTheme(newTheme);
+            localStorage.setItem('theme', newTheme);
+          }}
+        />
+        <MoonIcon width="16" height="16" />
+      </Flex>
+    </>
+  );
 };

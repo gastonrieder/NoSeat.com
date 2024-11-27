@@ -92,6 +92,7 @@
 		"unified": "^11.0.4",
 		"unist-builder": "^4.0.0",
 		"unist-util-visit": "^5.0.0",
+		"unsplash-js": "^7.0.19",
 		"usehooks-ts": "^3.0.1"
 	},
 	"devDependencies": {

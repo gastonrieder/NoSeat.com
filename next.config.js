@@ -9,6 +9,10 @@ module.exports = {
 			include: /node_modules/,
 			type: "javascript/auto",
 		});
+		config.module.rules.push({
+			test: /\.mdx?$/,
+			use: 'raw-loader',
+		  });
 		return config;
 	},
 

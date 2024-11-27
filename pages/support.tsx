@@ -8,17 +8,17 @@ import { getTransportImage } from "@utils/unsplash";
 import { ThemesDocsPage } from "@components/ThemesDocsPage";
 import { Footer } from "@components/Footer";
 
-type HomeProps = {
+type SupportProps = {
   frontmatter: {
     metaTitle: string;
     metaDescription: string;
-    slug: string;  // Added slug property
+    slug: string;
   };
   code: string;
   headerImage: string;
 };
 
-export default function Home({ frontmatter, code, headerImage }: HomeProps) {
+export default function Support({ frontmatter, code, headerImage }: SupportProps) {
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
 
   return (
@@ -27,7 +27,7 @@ export default function Home({ frontmatter, code, headerImage }: HomeProps) {
       <Box mb="3">
         <img 
           src={headerImage} 
-          alt={`Public Transport Guide`}
+          alt="Support NoSeat"
           style={{
             width: '100%',
             height: '250px',
@@ -41,15 +41,16 @@ export default function Home({ frontmatter, code, headerImage }: HomeProps) {
         <Component components={ThemesMDXComponents as any} />
       </MDXProvider>
     </ThemesDocsPage>
-          <Flex justify="center" mt="auto">
+    <Flex justify="center" mt="auto">
           <Footer />
         </Flex>
       </Flex>
   );
 }
+
 export async function getStaticProps() {
-  const { frontmatter, code } = await getMdxBySlug("templates/", "home");
-  const headerImage = await getTransportImage("public transport");
+  const { frontmatter, code } = await getMdxBySlug("templates/", "support");
+  const headerImage = await getTransportImage("public transport people");
 
   return { 
     props: { 
@@ -59,4 +60,3 @@ export async function getStaticProps() {
     } 
   };
 }
-

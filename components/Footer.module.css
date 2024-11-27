@@ -29,3 +29,13 @@
 		grid-column: auto;
 	}
 }
+
+.FooterContainer {
+  color: var(--gray-11);
+  width: 100%;
+  padding: 20px 20px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
