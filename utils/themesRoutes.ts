@@ -1,57 +1,76 @@
 export const themesRoutes = [
 	{
-		label: "Africa",
+		label: "Africa (coming soon)",
 		pages: [
 			{
-				title: "Egypt",
-				slug: "africa/egypt",
-				cities: ["Alexandria", "Cairo", "Giza"]
+				title: "Nothing here for now",
+				slug: "africa/nothing-here-for-now",
+				cities: ["Nothing here for now"]
 			},
-			{
-				title: "Kenya",
-				slug: "africa/kenya",
-				cities: ["Mombasa", "Nairobi"]
-			},
-			{
-				title: "Morocco",
-				slug: "africa/morocco",
-				cities: ["Casablanca", "Fez", "Marrakesh", "Rabat"]
-			},
-			{
-				title: "Nigeria",
-				slug: "africa/nigeria",
-				cities: ["Abuja", "Kano", "Lagos"]
-			},
-			{
-				title: "South Africa",
-				slug: "africa/south-africa",
-				cities: ["Cape Town", "Durban", "Johannesburg", "Pretoria"]
-			}
+			// {
+			// 	title: "Egypt",
+			// 	slug: "africa/egypt",
+			// 	cities: ["Nothing here for now"]
+			// 	// cities: ["Alexandria", "Cairo", "Giza"]
+			// },
+			// {
+			// 	title: "Kenya",
+			// 	slug: "africa/kenya",
+			// 	cities: ["Nothing here for now"]
+			// 	// cities: ["Mombasa", "Nairobi"]
+			// },
+			// {
+			// 	title: "Morocco",
+			// 	slug: "africa/morocco",
+			// 	cities: ["Nothing here for now"]
+			// 	// cities: ["Casablanca", "Fez", "Marrakesh", "Rabat"]
+			// },
+			// {
+			// 	title: "Nigeria",
+			// 	slug: "africa/nigeria",
+			// 	cities: ["Nothing here for now"]
+			// 	//cities: ["Abuja", "Kano", "Lagos"]
+			// },
+			// {
+			// 	title: "South Africa",
+			// 	slug: "africa/south-africa",
+			// 	cities: ["Nothing here for now"]
+			// 	// cities: ["Cape Town", "Durban", "Johannesburg", "Pretoria"]
+			// }
 		]
 	},
 	{
-		label: "Asia",
+		label: "Asia (coming soon)",
 		pages: [
 			{
-				title: "China",
-				slug: "asia/china",
-				cities: ["Beijing", "Guangzhou", "Hong Kong", "Shanghai", "Shenzhen"]
+				title: "Nothing here for now",
+				slug: "asia/nothing-here-for-now",
+				cities: ["Nothing here for now"]
 			},
-			{
-				title: "Japan",
-				slug: "asia/japan",
-				cities: ["Kyoto", "Nagoya", "Osaka", "Sapporo", "Tokyo"]
-			},
-			{
-				title: "Singapore",
-				slug: "asia/singapore",
-				cities: ["Singapore"]
-			},
-			{
-				title: "South Korea",
-				slug: "asia/south-korea",
-				cities: ["Busan", "Daegu", "Daejeon", "Incheon", "Seoul"]
-			}
+			// {
+			// 	title: "China",
+			// 	slug: "asia/china",
+			// 	cities: ["Nothing here for now"]
+			// 	// cities: ["Beijing", "Guangzhou", "Hong Kong", "Shanghai", "Shenzhen"]
+			// },
+			// {
+			// 	title: "Japan",
+			// 	slug: "asia/japan",
+			// 	cities: ["Nothing here for now"]
+			// 	// cities: ["Fukuoka", "Hiroshima", "Kyoto", "Nagoya", "Osaka", "Sapporo", "Tokyo"]
+			// },
+			// {
+			// 	title: "Singapore",
+			// 	slug: "asia/singapore",
+			// 	cities: ["Nothing here for now"]
+			// 	//cities: ["Singapore"]
+			// },
+			// {
+			// 	title: "South Korea",
+			// 	slug: "asia/south-korea",
+			// 	cities: ["Nothing here for now"]
+			// 	// cities: ["Busan", "Daegu", "Daejeon", "Incheon", "Seoul"]
+			// }
 		]
 	},
 	{
@@ -60,73 +79,95 @@ export const themesRoutes = [
 			{
 				title: "France",
 				slug: "europe/france",
-				cities: ["Bordeaux", "Lyon", "Marseille", "Nice", "Paris"]
+				cities: ["Paris"]
+				//cities: ["Bordeaux", "Lyon", "Marseille", "Nice", "Paris"]
 			},
-			{
-				title: "Germany",
-				slug: "europe/germany",
-				cities: ["Berlin", "Cologne", "Frankfurt", "Hamburg", "Munich"]
-			},
-			{
-				title: "Italy",
-				slug: "europe/italy",
-				cities: ["Florence", "Milan", "Naples", "Rome", "Venice"]
-			},
-			{
-				title: "Spain",
-				slug: "europe/spain",
-				cities: ["Barcelona", "Bilbao", "Madrid", "Seville", "Valencia"]
-			},
-			{
-				title: "Sweden",
-				slug: "europe/sweden",
-				cities: ["Stockholm", "Gothenburg", "Malmö", "Uppsala", "Linköping"]
-			},
+			// {
+			// 	title: "Germany",
+			// 	slug: "europe/germany",
+			// 	cities: ["Nothing here for now"]
+			// 	// cities: ["Berlin", "Cologne", "Frankfurt", "Hamburg", "Munich"]
+			// },
+			// {
+			// 	title: "Italy",
+			// 	slug: "europe/italy",
+			// 	cities: ["Nothing here for now"]
+			// 	// cities: ["Florence", "Milan", "Naples", "Rome", "Venice"]
+			// },
+			// {
+			// 	title: "Spain",
+			// 	slug: "europe/spain",
+			// 	cities: ["Nothing here for now"]
+			// 	// cities: ["Barcelona", "Bilbao", "Madrid", "Seville", "Valencia"]
+			// },
+			// {
+			// 	title: "Sweden",
+			// 	slug: "europe/sweden",
+			// 	cities: ["Nothing here for now"]
+			// 	// cities: ["Stockholm", "Gothenburg", "Malmö", "Uppsala", "Linköping"]
+			// },
 			{
 				title: "United Kingdom",
 				slug: "europe/uk",
-				cities: ["Edinburgh", "Glasgow", "Liverpool", "London", "Manchester"]
+				cities: ["London"]
+				// cities: ["Belfast", "Birmingham", "Bristol", "Cardiff", "Edinburgh", "Glasgow", "Liverpool", "London", "Manchester"]
 			}
 		]
 	},
 	{
-		label: "North America",
+		label: "N. America (coming soon)",
 		pages: [
 			{
-				title: "Canada",
-				slug: "north-america/canada",
-				cities: ["Calgary", "Montreal", "Ottawa", "Toronto", "Vancouver"]
+				title: "Nothing here for now",
+				slug: "north-america/nothing-here-for-now",
+				cities: ["Nothing here for now"]
 			},
-			{
-				title: "Mexico",
-				slug: "north-america/mexico",
-				cities: ["Guadalajara", "Mexico City", "Monterrey"]
-			},
-			{
-				title: "United States",
-				slug: "north-america/usa",
-				cities: ["Boston", "Chicago", "New York", "San Francisco", "Washington DC"]
-			}
+			// {
+			// 	title: "Canada",
+			// 	slug: "north-america/canada",
+			// 	cities: ["Nothing here for now"]
+			// 	// cities: ["Calgary", "Montreal", "Ottawa", "Toronto", "Vancouver"]
+			// },
+			// {
+			// 	title: "Mexico",
+			// 	slug: "north-america/mexico",
+			// 	cities: ["Nothing here for now"]
+			// 	// cities: ["Cancún", "Guadalajara", "Mexico City", "Monterrey"]
+			// },
+			// {
+			// 	title: "United States",
+			// 	slug: "north-america/usa",
+			// 	cities: ["Nothing here for now"]
+			// 	// cities: ["Atlanta", "Austin", "Boston", "Chicago", "Dallas", "Denver", "Detroit", "Houston", "Los Angeles", "Miami", "New York", "Philadelphia", "Phoenix", "Portland", "San Antonio", "San Diego", "San Francisco", "Seattle", "Washington DC"]
+			// }
 		]
 	},
 	{
-		label: "South America",
+		label: "S. America (coming soon)",
 		pages: [
 			{
-				title: "Argentina",
-				slug: "south-america/argentina",
-				cities: ["Buenos Aires", "Córdoba", "Mendoza", "Rosario"]
+				title: "Nothing here for now",
+				slug: "south-america/nothing-here-for-now",
+				cities: ["Nothing here for now"]
 			},
-			{
-				title: "Brazil",
-				slug: "south-america/brazil",
-				cities: ["Brasília", "Curitiba", "Rio de Janeiro", "Salvador", "São Paulo"]
-			},
-			{
-				title: "Chile",
-				slug: "south-america/chile",
-				cities: ["Concepción", "Santiago", "Valparaíso"]
-			}
+			// {
+			// 	title: "Argentina",
+			// 	slug: "south-america/argentina",
+			// 	cities: ["Nothing here for now"]
+			// 	// cities: ["Buenos Aires", "Córdoba", "Mendoza", "Rosario"]
+			// },
+			// {
+			// 	title: "Brazil",
+			// 	slug: "south-america/brazil",
+			// 	cities: ["Nothing here for now"]
+			// 	// cities: ["Belo Horizonte", "Brasília", "Curitiba", "Rio de Janeiro", "Salvador", "São Paulo"]
+			// },
+			// {
+			// 	title: "Chile",
+			// 	slug: "south-america/chile",
+			// 	cities: ["Nothing here for now"]
+			// 	// cities: ["Antofagasta", "Arica", "Calama", "Copiapó", "Iquique", "La Serena", "Puerto Montt", "Punta Arenas", "Santiago"]
+			// }
 		]
 	}
 ];

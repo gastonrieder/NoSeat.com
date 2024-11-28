@@ -55,7 +55,7 @@ export const Header = () => {
               right="0"
               pr="4"
             >
-              <Link size="2" color="gray" href="/contribute">
+              <Link size="2" color="gray" href="mailto:gastonrieder@gmail.com">
                 Don't see your city? Contribute!
               </Link>
 

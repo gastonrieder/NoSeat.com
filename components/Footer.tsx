@@ -31,7 +31,7 @@ export const Footer = () => {
 		</Flex>
   
 		<Box style={{ flex: 1, textAlign: 'right' }}>
-		  <Link href="/contribute">
+		  <Link href="mailto:gastonrieder@gmail.com">
 			<Text size="2" color='gray'>
 			  Don't see your city? Contribute!
 			</Text>
