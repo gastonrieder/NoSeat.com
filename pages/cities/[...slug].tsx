@@ -57,6 +57,7 @@ export default function CityDoc({ frontmatter, code, headerImage }: Doc) {
             </Flex>
   );
 }
+
 export async function getStaticProps(
   context: GetStaticPropsContext<{ slug: string[] }>,
 ) {
