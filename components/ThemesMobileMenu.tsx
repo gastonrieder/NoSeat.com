@@ -1,13 +1,13 @@
 "use client";
 import { themesRoutes } from "@utils/themesRoutes";
 import { Box, ScrollArea } from "@radix-ui/themes";
-import { ThemesHeader } from "./ThemesHeader";
+import { Header } from "./Header";
 import { DocsNav } from "./DocsNav";
 import { MobileMenu } from "./MobileMenu";
 
 export const ThemesMobileMenu = () => (
   <MobileMenu>
-    <ThemesHeader />
+    <Header />
     <ScrollArea>
       <Box pt="4" px="3" pb="9">
         <DocsNav
