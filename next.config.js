@@ -1,21 +1,20 @@
 const path = require("path");
 const { globSync } = require("glob");
 const compareVersions = require("compare-versions");
-const remarkGfm = require('remark-gfm')
 
 module.exports = {
-	webpack: (config, options) => {
-		config.module.rules.push({
-		  test: /\.mjs/,
-		  include: /node_modules/,
-		  type: "javascript/auto",
-		});
-		config.module.rules.push({
-		  test: /\.mdx?$/,
-		  use: 'raw-loader',
-		});
-		return config;
-	  },
+  webpack: (config, options) => {
+    config.module.rules.push({
+      test: /\.mjs/,
+      include: /node_modules/,
+      type: "javascript/auto",
+    });
+    config.module.rules.push({
+      test: /\.mdx?$/,
+      use: 'raw-loader',
+    });
+    return config;
+  },
 	async redirects() {
 		return [
 			{
