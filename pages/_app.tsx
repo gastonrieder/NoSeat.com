@@ -26,15 +26,6 @@ function Pages({ Component, pageProps }: AppProps) {
 		);
 	}
 
-	if (router.pathname.startsWith("/themes")) {
-		return (
-			<Theme accentColor="indigo" className="radix-themes-custom-fonts">
-				<Favicon />
-				<Component {...pageProps} />
-			</Theme>
-		);
-	}
-
 	return (
 		<Theme accentColor="indigo" className="radix-themes-custom-fonts">
 			<Favicon />

@@ -26,7 +26,6 @@ export const Header = () => {
     <Theme asChild className="radix-themes-custom-fonts">
       <div className={styles.HeaderRoot}>
         <div className={styles.HeaderInner}>
-          {/* Left: Logo */}
           <Flex align="center" position="absolute" top="0" bottom="0" left="0" pl="4">
 				    <NextLink href="/" passHref legacyBehavior>
 					    <BoxLink>
@@ -89,13 +88,20 @@ export const Header = () => {
 
             <ThemeToggle />
 
-            <Box display={{ md: 'none' }}>
-              <IconButton
-                size="3"
+            <Box>
+              <a
+                data-state={mobileMenu.open ? "active" : "inactive"}
+                className={styles.HeaderProductLink}
                 onClick={() => mobileMenu.setOpen((open) => !open)}
-              >
-                <HamburgerMenuIcon width="16" height="16" />
-              </IconButton>
+                style={{ display: 'flex', alignItems: 'center', height: '100%' }}
+                >
+                <span className={styles.HeaderProductLinkInner}>
+                  <HamburgerMenuIcon width="16" height="16" />
+                </span>
+                <span className={styles.HeaderProductLinkInnerHidden}>
+                  <HamburgerMenuIcon width="16" height="16" />
+                </span>
+              </a>
             </Box>
           </Flex>
         </div>
