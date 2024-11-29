@@ -8,7 +8,7 @@ import remarkSlug from "remark-slug";
 import rehypeHeroCodeBlock from "@utils/rehype-hero-code-block";
 import rehypeMetaAttribute from "@utils/rehype-meta-attribute.mjs";
 import rehypeHighlightCode from "@utils/rehype-highlight-code.mjs";
-
+import remarkGfm from "remark-gfm";
 import type { Frontmatter } from "types/frontmatter";
 
 const ROOT_PATH = process.cwd();
@@ -43,7 +43,7 @@ export const getMdxBySlug = async (basePath: string, slug: string) => {
 	const { frontmatter, code } = await bundleMDX({
 		source: source,
 		mdxOptions(options, frontmatter) {
-			options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkSlug];
+			options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkSlug, remarkGfm];
 			options.rehypePlugins = [
 				...(options.rehypePlugins ?? []),
 				rehypeHeroCodeBlock,
@@ -63,7 +63,6 @@ export const getMdxBySlug = async (basePath: string, slug: string) => {
 		code,
 	};
 };
-
 export function getAllVersionsFromPath(fromPath: string) {
 	const PATH = path.join(DATA_PATH, fromPath);
 	if (!fs.existsSync(PATH)) return [];

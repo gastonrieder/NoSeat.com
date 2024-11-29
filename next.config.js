@@ -1,30 +1,21 @@
 const path = require("path");
 const { globSync } = require("glob");
 const compareVersions = require("compare-versions");
+const remarkGfm = require('remark-gfm')
 
 module.exports = {
 	webpack: (config, options) => {
 		config.module.rules.push({
-			test: /\.mjs/,
-			include: /node_modules/,
-			type: "javascript/auto",
+		  test: /\.mjs/,
+		  include: /node_modules/,
+		  type: "javascript/auto",
 		});
 		config.module.rules.push({
-			test: /\.mdx?$/,
-			use: [
-				{
-					loader: '@mdx-js/loader',
-					options: {
-						providerImportSource: '@mdx-js/react',
-						remarkPlugins: [],
-						rehypePlugins: [],
-					}
-				}
-			]
+		  test: /\.mdx?$/,
+		  use: 'raw-loader',
 		});
 		return config;
-	},
-	// Next.js config
+	  },
 	async redirects() {
 		return [
 			{

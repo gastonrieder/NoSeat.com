@@ -35,6 +35,7 @@ function Pages({ Component, pageProps }: AppProps) {
 }
 
 import { SearchRoot } from "@components/PrimitivesSearch";
+import { Analytics } from '@vercel/analytics/react';
 
 function App(props: AppProps) {
 	useAnalytics();
@@ -44,6 +45,7 @@ function App(props: AppProps) {
 			<CssLibPreferenceProvider>
 				<ThemeProvider>
 					<Pages {...props} />
+					<Analytics />
 				</ThemeProvider>
 			</CssLibPreferenceProvider>
 		</SearchRoot>
@@ -51,7 +53,6 @@ function App(props: AppProps) {
 }
 
 export default App;
-
 function useAnalytics() {
 	React.useEffect(() => {
 		Router.events.on("routeChangeComplete", handleUrlChange);
