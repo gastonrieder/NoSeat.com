@@ -16,49 +16,46 @@ type Doc = {
   code: string;
   headerImage: string;
 };
-
 export default function CityDoc({ frontmatter, code, headerImage }: Doc) {
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
 
   return (
     <Flex direction="column" style={{ minHeight: '100vh' }}>
-    <ThemesDocsPage>
-      <Box mb="2">
-        <img 
-          src={headerImage} 
-          alt={`Public transport in ${frontmatter.metaTitle}`}
-          style={{
-            width: '100%',
-            height: '250px',
-            objectFit: 'cover',
-            borderRadius: 'var(--radius-3)'
-          }}
-        />
-      </Box>
+      <ThemesDocsPage>
+        <Box mb="2">
+          <img 
+            src={headerImage} 
+            alt={`Public transport in ${frontmatter.metaTitle}`}
+            style={{
+              width: '100%',
+              height: '250px',
+              objectFit: 'cover',
+              borderRadius: 'var(--radius-3)'
+            }}
+          />
+        </Box>
 
-      <Heading
-        as="h1"
-        size="8"
-        mb="2"
-        style={{ scrollMarginTop: "var(--space-9)" }}
-      >
-        {frontmatter.metaTitle}
-      </Heading>
+        <Heading
+          as="h1"
+          size="8"
+          mb="2"
+          style={{ scrollMarginTop: "var(--space-9)" }}
+        >
+          {frontmatter.metaTitle}
+        </Heading>
 
-      <MDXProvider frontmatter={frontmatter}>
-        <Component components={ThemesMDXComponents as any} />
-      </MDXProvider>
+        <MDXProvider frontmatter={frontmatter}>
+          <Component components={ThemesMDXComponents as any} />
+        </MDXProvider>
 
-      <QuickNav key={frontmatter.slug} />
+        <QuickNav key={frontmatter.slug} />
       </ThemesDocsPage>
-                <Flex justify="center" mt="auto">
-                <Footer />
-              </Flex>
-            </Flex>
+      <Flex justify="center" mt="auto">
+        <Footer />
+      </Flex>
+    </Flex>
   );
-}
-
-export async function getStaticProps(
+}export async function getStaticProps(
   context: GetStaticPropsContext<{ slug: string[] }>,
 ) {
   const { frontmatter, code } = await getMdxBySlug(

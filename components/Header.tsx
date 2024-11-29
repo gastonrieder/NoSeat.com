@@ -88,7 +88,7 @@ export const Header = () => {
 
             <ThemeToggle />
 
-            <Box>
+            <Box display={{ initial: 'block', md: 'none' }}>
               <a
                 data-state= "active"
                 className={styles.HeaderProductLink}

@@ -11,11 +11,19 @@ module.exports = {
 		});
 		config.module.rules.push({
 			test: /\.mdx?$/,
-			use: 'raw-loader',
-		  });
+			use: [
+				{
+					loader: '@mdx-js/loader',
+					options: {
+						providerImportSource: '@mdx-js/react',
+						remarkPlugins: [],
+						rehypePlugins: [],
+					}
+				}
+			]
+		});
 		return config;
 	},
-
 	// Next.js config
 	async redirects() {
 		return [

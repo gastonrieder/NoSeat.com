@@ -14,12 +14,17 @@
 		"scraper:setup": "docker run -it --name radix_algolia --env-file=./algolia/.env -e \"CONFIG=$(cat ./algolia/config.development.json | jq -r tostring)\" algolia/docsearch-scraper",
 		"scraper:reset": "docker rm radix_algolia && pnpm scraper:setup",
 		"scraper:run": "docker start radix_algolia",
-		"scraper:production": "docker run -it --env-file=./algolia/.env -e \"CONFIG=$(cat ./algolia/config.json | jq -r tostring)\" algolia/docsearch-scraper"
+		"scraper:production": "docker run -it --env-file=./algolia/.env -e \"CONFIG=$(cat ./algolia/config.json | jq -r tostring)\" algolia/docsearch-scraper",
+		"create-folders": "node scripts/create-public-folders.js",
+		"watch": "nodemon --watch data/cities -e mdx --exec 'node scripts/create-public-folders.js'"
 	},
 	"dependencies": {
 		"@algolia/autocomplete-core": "^1.7.1",
 		"@algolia/autocomplete-preset-algolia": "^1.7.1",
 		"@algolia/client-search": "^4.24.0",
+		"@mdx-js/esbuild": "^3.1.0",
+		"@mdx-js/loader": "^3.1.0",
+		"@mdx-js/react": "^3.1.0",
 		"@radix-ui/colors": "3.0.0",
 		"@radix-ui/primitive": "1.1.0",
 		"@radix-ui/react-accessible-icon": "1.1.0",

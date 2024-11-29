@@ -2,6 +2,7 @@ import { components } from "@components/MDXComponents";
 import * as themesDocsAssets from "@components/ThemesDocsAssets";
 import * as themesDocsTables from "@components/ThemesDocsTables";
 import * as icons from "@radix-ui/react-icons";
+import { Figure } from "./Figure";
 import { ThemesPropsTable } from "./ThemesPropsTable";
 import { ThemesUnofficialFigmaLibrary } from "./ThemesUnofficialFigmaLibrary";
 import { ThemesUnofficialTailwindPlugin } from "./ThemesUnofficialTailwindPlugin";
@@ -13,6 +14,7 @@ export const ThemesMDXComponents = {
 	...themesDocsAssets,
 	...themesDocsTables,
 	...icons,
+	Figure,
 	ThemesUnofficialFigmaLibrary,
 	ThemesUnofficialTailwindPlugin,
 	ThemesPropsTable: (props: any) => (
