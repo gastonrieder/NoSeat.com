@@ -90,7 +90,7 @@ export const Header = () => {
 
             <Box>
               <a
-                data-state={mobileMenu.open ? "active" : "inactive"}
+                data-state= "active"
                 className={styles.HeaderProductLink}
                 onClick={() => mobileMenu.setOpen((open) => !open)}
                 style={{ display: 'flex', alignItems: 'center', height: '100%' }}
