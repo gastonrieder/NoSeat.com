@@ -9,19 +9,20 @@ import { ThemesUnofficialTailwindPlugin } from "./ThemesUnofficialTailwindPlugin
 import { Box, Text, Card, Tooltip, Theme } from "@radix-ui/themes";
 import NextLink from "next/link";
 import { ReactNode } from 'react';
-import type { TooltipProps } from '@radix-ui/themes';
 
 export const ThemesMDXComponents = {
 	...components,
 	table: (props: any) => (
-		<table 
-			{...props} 
-			style={{ 
-				width: '100%', 
-				borderCollapse: 'collapse', 
-				marginBottom: '1rem'
-			}} 
-		/>
+		<div style={{ overflowX: 'auto', maxWidth: '100%', marginBottom: '1rem' }}>
+			<table 
+				{...props} 
+				style={{ 
+					width: '100%', 
+					borderCollapse: 'collapse',
+					minWidth: '500px' // Ensures table doesn't get too squeezed
+				}} 
+			/>
+		</div>
 	),
 	th: (props: any) => (
 		<th 
@@ -43,49 +44,49 @@ export const ThemesMDXComponents = {
 		/>
 	),
 	...themesDocsAssets,
-	...themesDocsTables,
-	...icons,
-	Tooltip: ({ children, content }: { children: ReactNode; content: string }) => (
-		<Tooltip content={content}>
-		  <span>{children}</span>
-		</Tooltip>
-	  ),
-	Figure,
-	ThemesUnofficialFigmaLibrary,
-	ThemesUnofficialTailwindPlugin,
-	ThemesPropsTable: (props: any) => (
-		<Box mt="4" mb="6">
-			<ThemesPropsTable {...props} />
-		</Box>
+...themesDocsTables,
+...icons,
+Tooltip: ({ children, content }: { children: ReactNode; content: string }) => (
+	<Tooltip content={content}>
+		<span>{children}</span>
+	</Tooltip>
 	),
-	ThemesLinkCard: ({
-		title,
-		desc,
-		href,
-	}: {
-		title: string;
-		desc: string;
-		href: string;
-	}) => {
-		const cardContent = (
-			<>
-				<Text as="div" size="2" weight="bold" mb="1">
-					{title}
-				</Text>
-				<Text as="p" size="2" color="gray">
-					{desc}
-				</Text>
-			</>
-		);
+Figure,
+ThemesUnofficialFigmaLibrary,
+ThemesUnofficialTailwindPlugin,
+ThemesPropsTable: (props: any) => (
+	<Box mt="4" mb="6">
+		<ThemesPropsTable {...props} />
+	</Box>
+),
+ThemesLinkCard: ({
+	title,
+	desc,
+	href,
+}: {
+	title: string;
+	desc: string;
+	href: string;
+}) => {
+	const cardContent = (
+		<>
+			<Text as="div" size="2" weight="bold" mb="1">
+				{title}
+			</Text>
+			<Text as="p" size="2" color="gray">
+				{desc}
+			</Text>
+		</>
+	);
 
-		return href ? (
-			<NextLink href={href} passHref legacyBehavior>
-				<Card size="2" asChild>
-					<a>{cardContent}</a>
-				</Card>
-			</NextLink>
-		) : (
-			<Card size="2">{cardContent}</Card>
-		);
-	},
+	return href ? (
+		<NextLink href={href} passHref legacyBehavior>
+			<Card size="2" asChild>
+				<a>{cardContent}</a>
+			</Card>
+		</NextLink>
+	) : (
+		<Card size="2">{cardContent}</Card>
+	);
+},
 };
