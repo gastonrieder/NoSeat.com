@@ -45,7 +45,7 @@ function App(props: AppProps) {
 			<CssLibPreferenceProvider>
 				<ThemeProvider>
 					<Pages {...props} />
-					<Analytics />
+					<Analytics/>
 				</ThemeProvider>
 			</CssLibPreferenceProvider>
 		</SearchRoot>
