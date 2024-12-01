@@ -77,6 +77,11 @@ export const themesRoutes = [
 		label: "Europe",
 		pages: [
 			{
+				title: "Belgium",
+				slug: "europe/belgium",
+				cities: ["Brussels"]
+			},
+			{
 				title: "France",
 				slug: "europe/france",
 				cities: ["Paris"]
