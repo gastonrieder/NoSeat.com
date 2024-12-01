@@ -6,7 +6,7 @@ export const unsplash = createApi({
 
 export const getTransportImage = async (cityName: string) => {
   const photos = await unsplash.search.getPhotos({
-    query: `${cityName} public transport`,
+    query: `Public transport in ${cityName}`,
     page: 1,
     perPage: 1,
   });
