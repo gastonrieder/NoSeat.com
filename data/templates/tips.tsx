@@ -3,7 +3,7 @@ import { Box, Card, Text, Link, Heading } from '@radix-ui/themes';
 export function Tips() {
   return (
     <Card size="2" style={{ marginTop: 32 }}>      
-      <Box mb="4">
+      {/* <Box mb="4">
         <Heading size="3" mb="2">💳 Tips on how to avoid currency exchange fees</Heading>
         <Text as="p">
           Coming soon. 
@@ -33,7 +33,7 @@ export function Tips() {
           Coming soon. 
           <Link> Browse guides</Link>
         </Text>
-      </Box>
+      </Box> */}
     </Card>
   );
 }
