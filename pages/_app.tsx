@@ -7,6 +7,9 @@ import { handleUrlChange } from "@utils/analytics";
 import { CssLibPreferenceProvider } from "@components/CssLibPreference";
 import { ThemesDocsPage } from "@components/ThemesDocsPage";
 import { Favicon } from "@components/Favicon";
+import { SearchRoot } from "@components/PrimitivesSearch";
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import "@radix-ui/themes/styles.css";
 import "./styles.css";
 import "./syntax-highlighting.css";
@@ -34,8 +37,7 @@ function Pages({ Component, pageProps }: AppProps) {
 	);
 }
 
-import { SearchRoot } from "@components/PrimitivesSearch";
-import { Analytics } from '@vercel/analytics/react';
+
 
 function App(props: AppProps) {
 	useAnalytics();
@@ -46,6 +48,7 @@ function App(props: AppProps) {
 				<ThemeProvider>
 					<Pages {...props} />
 					<Analytics/>
+					<SpeedInsights />
 				</ThemeProvider>
 			</CssLibPreferenceProvider>
 		</SearchRoot>
