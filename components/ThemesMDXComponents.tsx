@@ -37,8 +37,9 @@ const MobileHeading = ({ children, size, ...props }: any) => {
 export const ThemesMDXComponents = {
   ...components,
   h1: (props: any) => <Heading {...props} as="h1" size="8" data-heading />,
-  h2: (props: any) => <MobileHeading {...props} as="h2" size="6" />,
-  h3: (props: any) => <Heading {...props} as="h3" size="4" data-heading />,
+  h2: (props: any) => <MobileHeading {...props} as="h2" size="6" style={{ scrollMarginTop: 'calc(var(--header-height) + 16px)' }} />,
+  h3: (props: any) => <Heading {...props} as="h3" size="4" data-heading style={{ scrollMarginTop: 'calc(var(--header-height) + 16px)' }} />,
+  
 
   table: (props: any) => (
     <div style={{ overflowX: 'auto', maxWidth: '100%', marginBottom: '1rem' }}>
