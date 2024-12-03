@@ -18,30 +18,12 @@ export function QuickNav({ title = "Quick nav" }: { title?: string }) {
 	const getLevel = (nodeName: string) => {
 		return Number(nodeName.replace("H", ""));
 	};
-
-	return (
-		<Box
-			asChild
-			data-algolia-exclude
-			// Components that hide the scrollbar (like Dialog) add padding to
-			// account for the scrollbar gap to avoid layout jank. This does not
-			// work for position: fixed elements. Since we use react-remove-scroll
-			// under the hood for those primitives, we can add this helper class
-			// provided by that lib to deal with that for the QuickNav.
-			// https://github.com/radix-ui/website/issues/64
-			// https://github.com/theKashey/react-remove-scroll#positionfixed-elements
-			className={RemoveScroll.classNames.zeroRight}
-			style={{
-				position: "fixed",
-				flexShrink: 0,
-				display: "var(--quick-nav-display)",
-				top: "var(--header-height)",
-				width: 250,
-				zIndex: 1,
-				right: 0,
-				bottom: 0,
-			}}
-		>
+		return (
+			<Box
+				asChild
+				data-algelia-exclude
+				className={`${RemoveScroll.classNames.zeroRight} ${styles.quickNavContainer}`}
+			>
 			<aside>
 				<ScrollArea>
 					<Box

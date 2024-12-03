@@ -9,3 +9,22 @@
 .LinkWrapper[data-level="2"] ~ .LinkWrapper[data-level="3"] .Link {
 	margin-left: var(--space-5);
 }
+
+.quickNavContainer {
+  position: fixed;
+  flex-shrink: 0;
+  display: var(--quick-nav-display);
+  top: var(--header-height);
+  width: 250px;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .quickNavContainer {
+    position: static;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
