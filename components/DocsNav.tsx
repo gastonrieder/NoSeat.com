@@ -119,13 +119,7 @@ export const DocsNav = ({ routes }: DocsNavProps) => {
                         const cityUrl = createCityUrl(country.slug, city);
                         return (
                           <NextLink key={city} href={cityUrl}>
-                            <Box 
-                              className={styles.CityItem}
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                window.location.href = cityUrl;
-                              }}
-                            >
+                            <Box className={styles.CityItem}>
                               <Text size="1">{city}</Text>
                             </Box>
                           </NextLink>

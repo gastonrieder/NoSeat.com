@@ -1,6 +1,6 @@
 import React from "react";
 import { getMDXComponent } from "mdx-bundler/client";
-import { Box, Heading, Flex} from "@radix-ui/themes";
+import { Box, Heading, Flex, Text} from "@radix-ui/themes";
 import { MDXProvider } from "@components/MDXComponents";
 import { ThemesMDXComponents } from "@components/ThemesMDXComponents";
 import { getAllFrontmatter, getMdxBySlug } from "@utils/mdx";
@@ -18,7 +18,6 @@ type Doc = {
 };
 export default function CityDoc({ frontmatter, code, headerImage }: Doc) {
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
-
   return (
     <Flex direction="column" style={{ minHeight: '100vh' }}>
       <ThemesDocsPage>
@@ -36,26 +35,31 @@ export default function CityDoc({ frontmatter, code, headerImage }: Doc) {
         </Box>
 
         <Heading
-          as="h1"
-          size="8"
-          mb="2"
-          style={{ scrollMarginTop: "var(--space-9)" }}
-        >
-          {frontmatter.metaTitle}
-        </Heading>
+        as="h1"
+        size="8"
+        mb="2"
+        style={{ scrollMarginTop: "var(--space-9)" }}
+      >
+        {frontmatter.metaTitle}
+      </Heading>
+
+      <Text size="3" mb="4">
+        {frontmatter.metaDescription}
+      </Text>
+
+        <QuickNav key={frontmatter.slug} />
 
         <MDXProvider frontmatter={frontmatter}>
           <Component components={ThemesMDXComponents as any} />
         </MDXProvider>
-
-        <QuickNav key={frontmatter.slug} />
       </ThemesDocsPage>
       <Flex justify="center" mt="auto">
         <Footer />
       </Flex>
     </Flex>
-  );
-}export async function getStaticProps(
+  );}
+  
+  export async function getStaticProps(
   context: GetStaticPropsContext<{ slug: string[] }>,
 ) {
   const { frontmatter, code } = await getMdxBySlug(

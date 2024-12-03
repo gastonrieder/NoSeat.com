@@ -42,73 +42,65 @@
 } */
 
 .AccordionTrigger {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	cursor: pointer;
-	border: none;
-	background: transparent;
-	border-radius: var(--radius-3);
-  }
-  
-  /* Continent level styling */
-  .AccordionTrigger[data-level="continent"] {
-	font-size: var(--font-size-4);
-	font-weight: var(--font-weight-bold);
-  }
-  
-  /* Country level styling */
-  .AccordionTrigger[data-level="country"] {
-	font-size: var(--font-size-4);
-	background-color: var(--gray-a1);
-  }
-  .CityItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-3);
+  padding: 8px;
+}
+
+.AccordionTrigger[data-level="continent"] {
+  font-size: var(--font-size-4);
+  font-weight: var(--font-weight-bold);
+}
+
+.AccordionTrigger[data-level="country"] {
+  font-size: var(--font-size-4);
+  background-color: var(--gray-a1);
+}
+
+.CityItem {
   padding: 4px 32px;
-  text-decoration: none;
   color: var(--gray-20);
   display: block;
   position: relative;
   z-index: 1;
-  pointer-events: auto;
-  }
-  
-  .CityItem:hover {
+}
+
+.CityItem:hover {
   background-color: var(--gray-a3);
-  }
-  .CityItem[data-active="true"] {
-	color: var(--gray-20);
-	font-weight: 500;
-  }
-  
-  
-  .AccordionChevron {
-	transition: transform 300ms;
-  }
-  
-  .AccordionTrigger[data-state='open'] > .AccordionChevron {
-	transform: rotate(90deg);
-  }
-  
-  .AccordionContent {
-	overflow: hidden;
-  }
-  
-  .AccordionContent[data-state='open'] {
-	animation: slideDown 300ms ease-out;
-  }
-  
-  .AccordionContent[data-state='closed'] {
-	animation: slideUp 300ms ease-out;
-  }
-  
-  @keyframes slideDown {
-	from { height: 0; }
-	to { height: var(--radix-accordion-content-height); }
-  }
-  
-  @keyframes slideUp {
-	from { height: var(--radix-accordion-content-height); }
-	to { height: 0; }
-  }
-  
+}
+
+.AccordionChevron {
+  transition: transform 300ms;
+}
+
+.AccordionTrigger[data-state='open'] > .AccordionChevron {
+  transform: rotate(90deg);
+}
+
+.AccordionContent {
+  overflow: hidden;
+}
+
+.AccordionContent[data-state='open'] {
+  animation: slideDown 300ms ease-out;
+}
+
+.AccordionContent[data-state='closed'] {
+  animation: slideUp 300ms ease-out;
+}
+
+@keyframes slideDown {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+
+@keyframes slideUp {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
+}
