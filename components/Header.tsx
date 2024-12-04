@@ -9,14 +9,19 @@ import {
   Text,
   Box
 } from "@radix-ui/themes";
-import { HomeIcon, InfoCircledIcon, HeartFilledIcon, TwitterLogoIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
+import { 
+  HomeIcon, 
+  InfoCircledIcon, 
+  HeartFilledIcon, 
+  TwitterLogoIcon, 
+  HamburgerMenuIcon 
+} from "@radix-ui/react-icons";
 import styles from "./Header.module.css";
 import { ThemeToggle } from "./ThemeToggle";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 import { useMobileMenuContext } from "./MobileMenu";
 import { BoxLink } from "./BoxLink";
-
 
 export const Header = () => {
   const mobileMenu = useMobileMenuContext();
@@ -26,13 +31,14 @@ export const Header = () => {
     <Theme asChild className="radix-themes-custom-fonts">
       <div className={styles.HeaderRoot}>
         <div className={styles.HeaderInner}>
+          {/* Left: Logo */}
           <Flex align="center" position="absolute" top="0" bottom="0" left="0" pl="4">
-				    <NextLink href="/" passHref legacyBehavior>
-					    <BoxLink>
-						    <Text size="6" weight="bold">NoSeat.com</Text>
-					    </BoxLink>
-				    </NextLink>
-			    </Flex>
+            <NextLink href="/" passHref legacyBehavior>
+              <BoxLink>
+                <Text size={{ initial: '3', md: '6' }} weight="bold">NoSeat.com</Text>
+              </BoxLink>
+            </NextLink>
+          </Flex>
 
           {/* Center: Navigation */}
           <div className={styles.HeaderProductLinksContainer}>
@@ -50,7 +56,7 @@ export const Header = () => {
             </Flex>
 
             {/* Mobile Nav */}
-            <Flex display={{ md: 'none' }} justify="center" align="center" style={{ height: '100%' }}>
+            <Flex display={{ md: 'none' }} justify="center" align="center" gap="0" style={{ height: '100%' }}>
               <HeaderProductLink href="/" active={router.pathname === "/"}>
                 <HomeIcon width="18" height="18" />
               </HeaderProductLink>
@@ -66,12 +72,13 @@ export const Header = () => {
           {/* Right: Actions */}
           <Flex
             align="center"
-            gap="4"
+            gap={{ initial: "2", md: "4" }}
             position="absolute"
             top="0"
             bottom="0"
             right="0"
-            pr="4">
+            pr="4"
+          >
             <Box display={{ initial: 'none', md: 'block' }}>
               <Link size="2" color="gray" href="mailto:gastonrieder@gmail.com">
                 Don't see your city? Contribute!
@@ -90,11 +97,11 @@ export const Header = () => {
 
             <Box display={{ initial: 'block', md: 'none' }}>
               <a
-                data-state= "active"
+                data-state="active"
                 className={styles.HeaderProductLink}
                 onClick={() => mobileMenu.setOpen((open) => !open)}
                 style={{ display: 'flex', alignItems: 'center', height: '100%' }}
-                >
+              >
                 <span className={styles.HeaderProductLinkInner}>
                   <HamburgerMenuIcon width="16" height="16" />
                 </span>
@@ -109,7 +116,6 @@ export const Header = () => {
     </Theme>
   );
 };
-
 
 const HeaderProductLink = ({
   active,

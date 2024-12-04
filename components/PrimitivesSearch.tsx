@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Box, TextField } from "@radix-ui/themes";
-import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { createContext } from "@radix-ui/react-context";
 
 export const [SearchProvider, useSearchContext] = createContext<{
