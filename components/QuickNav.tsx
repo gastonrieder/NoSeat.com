@@ -4,16 +4,16 @@ import styles from "./QuickNav.module.css";
 
 export function QuickNav({ title = "Route mapper (if you'll pardon the pun)" }: { title?: string }) {
   const [headings, setHeadings] = React.useState<HTMLHeadingElement[]>([]);
-  const [isMobile, setIsMobile] = React.useState(false);
+  const [isMobileOrTablet, setIsMobileOrTablet] = React.useState(false);
 
   React.useEffect(() => {
     const headingElements = Array.from(document.querySelectorAll("[data-heading]"));
     setHeadings(headingElements as HTMLHeadingElement[]);
 
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    const checkDeviceType = () => setIsMobileOrTablet(window.innerWidth <= 1024);
+    checkDeviceType();
+    window.addEventListener('resize', checkDeviceType);
+    return () => window.removeEventListener('resize', checkDeviceType);
   }, []);
 
   const getLevel = (nodeName: string) => Number(nodeName.replace("H", ""));
@@ -23,8 +23,7 @@ export function QuickNav({ title = "Route mapper (if you'll pardon the pun)" }: 
       <Box
         asChild
         px="5"
-        aria-labelledby="route-mapper"
-        style={{
+        aria-labelledby="route-mapper"        style={{
           paddingBlock: 20,
           display: headings.length === 0 ? "none" : "block",
         }}
@@ -67,7 +66,7 @@ export function QuickNav({ title = "Route mapper (if you'll pardon the pun)" }: 
 
   return (
     <Box
-      className={isMobile ? styles.mobileQuickNav : styles.desktopQuickNav}
+      className={isMobileOrTablet ? styles.mobileQuickNav : styles.desktopQuickNav}
       data-algolia-exclude
     >
       {navContent}
