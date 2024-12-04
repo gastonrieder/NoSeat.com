@@ -18,7 +18,7 @@ interface DocsNavProps {
 }
 
 export const DocsNav = ({ routes }: DocsNavProps) => {
-  const { searchQuery } = useSearchContext("CitySearch");
+  const { searchQuery, setSearchQuery } = useSearchContext("CitySearch");
   const [expandedContinents, setExpandedContinents] = React.useState<string[]>([]);
   const [expandedCountries, setExpandedCountries] = React.useState<string[]>([]);
 
@@ -115,16 +115,29 @@ export const DocsNav = ({ routes }: DocsNavProps) => {
                       </Accordion.Trigger>
                     </Accordion.Header>
                     <Accordion.Content className={styles.AccordionContent}>
-                      {country.cities.map((city) => {
-                        const cityUrl = createCityUrl(country.slug, city);
-                        return (
-                          <NextLink key={city} href={cityUrl}>
-                            <Box className={styles.CityItem}>
-                              <Text size="1">{city}</Text>
-                            </Box>
-                          </NextLink>
-                        );
-                      })}
+                      {country.cities.map((city) => (
+                        <NextLink 
+                          key={city} 
+                          href={`/cities/${country.slug}/${city.toLowerCase()
+                            .normalize('NFD')
+                            .replace(/[\u0300-\u036f]/g, '')
+                            .replace(/\s+/g, '-')}`} 
+                        >
+                          <Box 
+                            className={styles.CityItem}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setSearchQuery('');  // Clear search query on click
+                              window.location.href = `/cities/${country.slug}/${city.toLowerCase()
+                                .normalize('NFD')
+                                .replace(/[\u0300-\u036f]/g, '')
+                                .replace(/\s+/g, '-')}`;
+                            }}
+                          >
+                            <Text size="1">{city}</Text>
+                          </Box>
+                        </NextLink>
+                      ))}
                     </Accordion.Content>
                   </Accordion.Item>
                 ))}

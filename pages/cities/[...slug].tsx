@@ -46,9 +46,7 @@ export default function CityDoc({ frontmatter, code, headerImage }: Doc) {
       <Text size="3" mb="4">
         {frontmatter.metaDescription}
       </Text>
-
         <QuickNav key={frontmatter.slug} />
-
         <MDXProvider frontmatter={frontmatter}>
           <Component components={ThemesMDXComponents as any} />
         </MDXProvider>
