@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Link, Heading, ScrollArea } from "@radix-ui/themes";
 import styles from "./QuickNav.module.css";
 
-export function QuickNav({ title = "Route map (if you'll pardon the pun)" }: { title?: string }) {
+export function QuickNav({ title = "Route mapper (if you'll pardon the pun)" }: { title?: string }) {
   const [headings, setHeadings] = React.useState<HTMLHeadingElement[]>([]);
   const [isMobile, setIsMobile] = React.useState(false);
 
@@ -23,14 +23,14 @@ export function QuickNav({ title = "Route map (if you'll pardon the pun)" }: { t
       <Box
         asChild
         px="5"
-        aria-labelledby="site-quick-nav-heading"
+        aria-labelledby="route-mapper"
         style={{
           paddingBlock: 20,
           display: headings.length === 0 ? "none" : "block",
         }}
       >
         <nav>
-          <Heading mb="3" size="4" id="site-quick-nav-heading" asChild>
+          <Heading mb="3" size="4" id="route-mapper" asChild>
             <h4>{title}</h4>
           </Heading>
           <Box asChild p="0" style={{ listStyle: "none" }}>
