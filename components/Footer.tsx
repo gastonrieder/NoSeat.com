@@ -12,7 +12,7 @@ export const Footer = () => {
 	  >
 		<Box style={{ flex: 1 }}>
 		  <Text size="2" color='gray'>
-			noseat.com © 2024
+			noseat.co © 2024
 		  </Text>
 		</Box>
   

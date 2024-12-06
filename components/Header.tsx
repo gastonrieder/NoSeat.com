@@ -35,7 +35,7 @@ export const Header = () => {
           <Flex align="center" position="absolute" top="0" bottom="0" left="0" pl="4">
             <NextLink href="/" passHref legacyBehavior>
               <BoxLink>
-                <Text size={{ initial: '3', md: '6' }} weight="bold">NoSeat.com</Text>
+                <Text size={{ initial: '3', md: '6' }} weight="bold">NoSeat.co</Text>
               </BoxLink>
             </NextLink>
           </Flex>
