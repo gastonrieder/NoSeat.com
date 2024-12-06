@@ -17,11 +17,11 @@ export const Footer = () => {
 		</Box>
   
 		<Flex gap="4" align="center" justify="center" style={{ flex: 1 }}>
-		<Tooltip content="No Twitter for now!">
+		{/* <Tooltip content="No Twitter for now!">
 		  <Link  target="_blank">
 			<TwitterLogoIcon width="20" height="20" color="gray"/>
 		  </Link>
-		  </Tooltip>
+		  </Tooltip> */}
 		  {/* <Link href="https://github.com/noseat/contribute" target="_blank">
 			<GitHubLogoIcon width="20" height="20" color="gray"/>
 		  </Link> */}

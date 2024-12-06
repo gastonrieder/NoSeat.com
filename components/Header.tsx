@@ -84,16 +84,16 @@ export const Header = () => {
                 Don't see your city? Contribute!
               </Link>
             </Box>
-
+{/* 
             <Tooltip content="No Twitter for now!">
               <IconButton asChild size="3" variant="ghost" color="gray">
                 <a target="_blank" aria-label="No Twitter for now!">
                   <TwitterLogoIcon width="16" height="16" />
                 </a>
               </IconButton>
-            </Tooltip>
+            </Tooltip> */}
 
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
 
             <Box display={{ initial: 'block', md: 'none' }}>
               <a
