@@ -2,7 +2,7 @@ import React from "react";
 import { AppProps } from "next/app";
 import { Router, useRouter } from "next/router";
 import { Theme } from "@radix-ui/themes";
-import { ThemeProvider } from "@components/ThemeProvider";
+import { ThemeProvider } from "next-themes";
 import { handleUrlChange } from "@utils/analytics";
 import { CssLibPreferenceProvider } from "@components/CssLibPreference";
 import { ThemesDocsPage } from "@components/ThemesDocsPage";
@@ -45,7 +45,7 @@ function App(props: AppProps) {
 	return (
 		<SearchRoot>
 			<CssLibPreferenceProvider>
-				<ThemeProvider>
+				<ThemeProvider attribute="class" defaultTheme="system">
 					<Pages {...props} />
 					<Analytics/>
 					<SpeedInsights />

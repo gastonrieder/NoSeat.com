@@ -40,19 +40,19 @@ export const themesRoutes = [
 		]
 	},
 	{
-		label: "Asia (coming soon)",
+		label: "Asia",
 		pages: [
 			{
-				title: "Nothing here for now",
-				slug: "asia/nothing-here-for-now",
-				cities: ["Nothing here for now"]
+				title: "China",
+				slug: "asia/china",
+				cities: ["Chengdu (coming soon)"]
+				// cities: ["Beijing", "Guangzhou", "Hong Kong", "Shanghai", "Shenzhen"]
 			},
-			// {
-			// 	title: "China",
-			// 	slug: "asia/china",
-			// 	cities: ["Nothing here for now"]
-			// 	// cities: ["Beijing", "Guangzhou", "Hong Kong", "Shanghai", "Shenzhen"]
-			// },
+			{
+				title: 'Hong Kong',
+				slug: 'asia/hong-kong',
+				cities: ['Hong Kong']
+			}
 			// {
 			// 	title: "Japan",
 			// 	slug: "asia/japan",
@@ -81,12 +81,12 @@ export const themesRoutes = [
 				slug: "europe/belgium",
 				cities: ["Brussels"]
 			},
-			{
-				title: "France",
-				slug: "europe/france",
-				cities: ["Paris"]
-				//cities: ["Bordeaux", "Lyon", "Marseille", "Nice", "Paris"]
-			},
+			// {
+			// 	title: "France",
+			// 	slug: "europe/france",
+			// 	cities: ["Paris"]
+			// 	//cities: ["Bordeaux", "Lyon", "Marseille", "Nice", "Paris"]
+			// },
 			// {
 			// 	title: "Germany",
 			// 	slug: "europe/germany",
@@ -120,17 +120,18 @@ export const themesRoutes = [
 		]
 	},
 	{
-		label: "N. America (coming soon)",
+		label: "North America",
 		pages: [
 			{
 				title: "Nothing here for now",
-				slug: "north-america/nothing-here-for-now",
+				slug: "africa/nothing-here-for-now",
 				cities: ["Nothing here for now"]
 			},
+			
 			// {
 			// 	title: "Canada",
 			// 	slug: "north-america/canada",
-			// 	cities: ["Nothing here for now"]
+			// 	cities: ["Toronto"]
 			// 	// cities: ["Calgary", "Montreal", "Ottawa", "Toronto", "Vancouver"]
 			// },
 			// {
@@ -142,7 +143,7 @@ export const themesRoutes = [
 			// {
 			// 	title: "United States",
 			// 	slug: "north-america/usa",
-			// 	cities: ["Nothing here for now"]
+			// 	cities: ["New York City"]
 			// 	// cities: ["Atlanta", "Austin", "Boston", "Chicago", "Dallas", "Denver", "Detroit", "Houston", "Los Angeles", "Miami", "New York", "Philadelphia", "Phoenix", "Portland", "San Antonio", "San Diego", "San Francisco", "Seattle", "Washington DC"]
 			// }
 		]

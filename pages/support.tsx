@@ -50,7 +50,7 @@ export default function Support({ frontmatter, code, headerImage }: SupportProps
 
 export async function getStaticProps() {
   const { frontmatter, code } = await getMdxBySlug("templates/", "support");
-  const headerImage = await getTransportImage("public transport people");
+  const headerImage = await getTransportImage("interaction train");
 
   return { 
     props: { 

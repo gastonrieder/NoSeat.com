@@ -73,7 +73,7 @@ export default function Home({ frontmatter, code, headerImage }: HomeProps) {
   );
 }export async function getStaticProps() {
   const { frontmatter, code } = await getMdxBySlug("templates/", "home");
-  const headerImage = await getTransportImage("public transport");
+  const headerImage = await getTransportImage("tram");
 
   return { 
     props: { 
