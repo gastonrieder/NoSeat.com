@@ -123,17 +123,10 @@ export const themesRoutes = [
 		label: "North America",
 		pages: [
 			{
-				title: "Nothing here for now",
-				slug: "africa/nothing-here-for-now",
-				cities: ["Nothing here for now"]
+				title: "Canada",
+				slug: "north-america/canada",
+				cities: ["Toronto"]
 			},
-			
-			// {
-			// 	title: "Canada",
-			// 	slug: "north-america/canada",
-			// 	cities: ["Toronto"]
-			// 	// cities: ["Calgary", "Montreal", "Ottawa", "Toronto", "Vancouver"]
-			// },
 			// {
 			// 	title: "Mexico",
 			// 	slug: "north-america/mexico",
