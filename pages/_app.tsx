@@ -15,7 +15,12 @@ import "./syntax-highlighting.css";
 
 function Pages({ Component, pageProps }: AppProps) {
 	return (
-		<Theme accentColor="indigo" className="radix-themes-custom-fonts">
+		
+		<Theme 
+		accentColor="indigo" 
+		className="radix-themes-custom-fonts"
+		appearance="inherit"
+	  	>			
 			<Favicon />
 			<Component {...pageProps} />
 		</Theme>
