@@ -5,7 +5,6 @@ import { Theme } from "@radix-ui/themes";
 import { ThemeProvider } from "next-themes";
 import { handleUrlChange } from "@utils/analytics";
 import { CssLibPreferenceProvider } from "@components/CssLibPreference";
-import { ThemesDocsPage } from "@components/ThemesDocsPage";
 import { Favicon } from "@components/Favicon";
 import { SearchRoot } from "@components/PrimitivesSearch";
 import { Analytics } from '@vercel/analytics/react';
@@ -15,20 +14,6 @@ import "./styles.css";
 import "./syntax-highlighting.css";
 
 function Pages({ Component, pageProps }: AppProps) {
-	const router = useRouter();
-
-	
-	if (router.pathname.startsWith("/themes/docs")) {
-		return (
-			<Theme accentColor="indigo" className="radix-themes-custom-fonts">
-				<ThemesDocsPage>
-					<Favicon />
-					<Component {...pageProps} />
-				</ThemesDocsPage>
-			</Theme>
-		);
-	}
-
 	return (
 		<Theme accentColor="indigo" className="radix-themes-custom-fonts">
 			<Favicon />
@@ -37,15 +22,13 @@ function Pages({ Component, pageProps }: AppProps) {
 	);
 }
 
-
-
 function App(props: AppProps) {
 	useAnalytics();
 
 	return (
 		<SearchRoot>
 			<CssLibPreferenceProvider>
-				<ThemeProvider attribute="class" defaultTheme="system">
+				<ThemeProvider enableSystem attribute="class" defaultTheme="system">
 					<Pages {...props} />
 					<Analytics/>
 					<SpeedInsights />
@@ -56,6 +39,7 @@ function App(props: AppProps) {
 }
 
 export default App;
+
 function useAnalytics() {
 	React.useEffect(() => {
 		Router.events.on("routeChangeComplete", handleUrlChange);
