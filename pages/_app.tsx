@@ -1,4 +1,5 @@
 import React from "react";
+import Head from 'next/head'
 import { AppProps } from "next/app";
 import { Router, useRouter } from "next/router";
 import { Theme } from "@radix-ui/themes";
@@ -15,18 +16,23 @@ import "./syntax-highlighting.css";
 
 function Pages({ Component, pageProps }: AppProps) {
 	return (
-		
 		<Theme 
-		accentColor="indigo" 
-		className="radix-themes-custom-fonts"
-		appearance="inherit"
-	  	>			
+			accentColor="indigo" 
+			className="radix-themes-custom-fonts"
+			appearance="inherit"
+		>
+			<Head>
+				<title>NoSeat.co - Public Transport Guides</title>
+				<meta property="og:title" content="NoSeat.co" />
+				<meta property="og:description" content="Public transport guides for cities worldwide" />
+				<meta property="og:image" content="https://noseat.co/favicon.ico" />
+				<meta property="og:url" content="https://noseat.co" />
+			</Head>
 			<Favicon />
 			<Component {...pageProps} />
 		</Theme>
 	);
 }
-
 function App(props: AppProps) {
 	useAnalytics();
 
