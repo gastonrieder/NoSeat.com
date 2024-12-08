@@ -13,9 +13,6 @@ import { SpeedInsights } from '@vercel/speed-insights/react';
 import "@radix-ui/themes/styles.css";
 import "./styles.css";
 import "./syntax-highlighting.css";
-import { getTransportImage } from "@utils/unsplash";
-
-const ogImage = await getTransportImage('tram');
 
 function Pages({ Component, pageProps }: AppProps) {
 	return (
@@ -26,9 +23,8 @@ function Pages({ Component, pageProps }: AppProps) {
 		>
 			<Head>
 				<title>NoSeat.co - Public Transport Guides</title>
-				<meta property="og:title" content="NoSeat.co" />
-				<meta property="og:description" content="Your guide to seamless public transport payments" />
-				<meta property="og:image" content={ogImage}/>
+				<meta property="og:title" content="NoSeat" />
+				<meta property="og:description" content="Your guide to public transport payments" />
 				<meta property="og:url" content="https://noseat.co" />
 			</Head>
 			<Favicon />

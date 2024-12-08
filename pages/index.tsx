@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import { getMDXComponent } from "mdx-bundler/client";
 import { Box, Flex, Heading, Text} from "@radix-ui/themes";
 import { MDXProvider } from "@components/MDXComponents";
@@ -27,6 +28,9 @@ export default function Home({ frontmatter, code, headerImage }: HomeProps) {
   return (
     <Flex direction="column" style={{ minHeight: '100vh' }}>
       <ThemesDocsPage>
+      <Head>
+          <meta property="og:image" content={headerImage} />
+        </Head>
         <Box mb="3">
           <img 
             src={headerImage} 
