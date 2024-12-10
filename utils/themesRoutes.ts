@@ -46,7 +46,7 @@ export const themesRoutes = [
 			{
 				title: 'Netherlands',
 				slug: 'europe/netherlands',
-				cities: ['Amsterdam (coming soon)']
+				cities: ['Amsterdam']
 			},
 			{
 				title: "Germany",
