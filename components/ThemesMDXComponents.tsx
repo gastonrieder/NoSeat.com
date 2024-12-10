@@ -3,7 +3,6 @@ import * as themesDocsAssets from "@components/ThemesDocsAssets";
 import * as themesDocsTables from "@components/ThemesDocsTables";
 import * as icons from "@radix-ui/react-icons";
 import { Figure } from "./Figure";
-import { ThemesPropsTable } from "./ThemesPropsTable";
 import { Text, Card, Tooltip, Theme, Heading, Link, Box } from "@radix-ui/themes";
 import { ArrowUpIcon } from "@radix-ui/react-icons";
 import { ReactNode, useEffect, useState } from "react";
@@ -52,7 +51,11 @@ export const ThemesMDXComponents = {
   ),
 
   td: (props: any) => (
-    <td {...props} style={{ borderBottom: '1px solid var(--gray-4)', padding: '0.5rem' }} />
+    <td {...props} style={{ 
+      borderBottom: '1px solid var(--gray-4)', 
+      padding: '0.5rem', 
+      color: props.children.toString().includes('Buses') ? 'white' : 'red-gray-11)',
+    }} />
   ),
 
   ...themesDocsAssets,
@@ -64,13 +67,7 @@ export const ThemesMDXComponents = {
       <span>{children}</span>
     </Tooltip>
   ),
-
   Figure,
-  ThemesPropsTable: (props: any) => (
-    <Box mt="4" mb="6">
-      <ThemesPropsTable {...props} />
-    </Box>
-  ),
 
   ThemesLinkCard: ({ title, desc, href }: { title: string; desc: string; href: string }) => (
     <NextLink href={href || ''} passHref legacyBehavior>
