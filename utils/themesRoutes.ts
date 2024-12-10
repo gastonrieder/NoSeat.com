@@ -16,7 +16,6 @@ export const themesRoutes = [
 				title: "China",
 				slug: "asia/china",
 				cities: ["Chengdu (coming soon)"]
-				// cities: ["Beijing", "Guangzhou", "Hong Kong", "Shanghai", "Shenzhen"]
 			},
 			{
 				title: 'Hong Kong',
@@ -38,11 +37,11 @@ export const themesRoutes = [
 				slug: "europe/belgium",
 				cities: ["Brussels"]
 			},
-			// {
-			// 	title: "France",
-			// 	slug: "europe/france",
-			// 	cities: ["Paris"]
-			// },
+			{
+				title: "France",
+				slug: "europe/france",
+				cities: ["Paris (coming soon)"]
+			},
 			{
 				title: 'Netherlands',
 				slug: 'europe/netherlands',

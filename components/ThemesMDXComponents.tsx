@@ -26,7 +26,7 @@ const MobileHeading = ({ children, size, ...props }: any) => {
         {children}
       </Heading>
       {isMobile && (
-        <Link href="#route-mapper" className={styles.backToTop}>
+        <Link href="#" className={styles.backToTop}>
           <ArrowUpIcon width={20} height={20} />
         </Link>
       )}
