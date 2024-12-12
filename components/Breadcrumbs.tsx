@@ -1,5 +1,5 @@
 import { Flex, Text } from "@radix-ui/themes";
-import { ChevronRightIcon } from "@radix-ui/react-icons";
+import { ChevronRightIcon, GlobeIcon } from "@radix-ui/react-icons";
 import { themesRoutes } from "@utils/themesRoutes";
 
 interface BreadcrumbsProps {
@@ -16,6 +16,8 @@ export const Breadcrumbs = ({ continent, country, city }: BreadcrumbsProps) => {
 
   return (
     <Flex gap="2" align="center" mb="4">
+      <GlobeIcon />
+      <ChevronRightIcon />
       <Text size="2" color="gray">{continentData?.label || continent}</Text>
       <ChevronRightIcon />
       <Text size="2" color="gray">{countryData?.title || country}</Text>
