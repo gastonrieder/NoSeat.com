@@ -11,29 +11,28 @@ import { DocsPageWrapper } from "./DocsPageWrapper";
 import { ThemesMobileMenu } from "./ThemesMobileMenu";
 import { Tips } from '../data/templates/tips';
 
-
 export function ThemesDocsPage({ children }: { children: React.ReactNode }) {
 	return (
 		<MobileMenuProvider>
-			<Header />
-			<ThemesMobileMenu />
+				<Header />
+				<ThemesMobileMenu />
 
-			<Flex>
-				<SideNav>
-					<Box pt="4" px="3" pb="9">
-						<Box mb="4">
-							<PrimitivesSearchDesktop />
+				<Flex>
+					<SideNav>
+						<Box pt="4" px="3" pb="9">
+							<Box mb="4">
+								<PrimitivesSearchDesktop />
+							</Box>
+
+							<DocsNav routes={themesRoutes} />
 						</Box>
+					</SideNav>
 
-						<DocsNav routes={themesRoutes} />
-					</Box>
-				</SideNav>
-
-				<DocsPageWrapper>
-					<Box data-algolia-page-scope>{children}</Box>
-					<Tips/>
-				</DocsPageWrapper>
-			</Flex>
+					<DocsPageWrapper>
+						<Box data-algolia-page-scope>{children}</Box>
+						<Tips/>
+					</DocsPageWrapper>
+				</Flex>
 		</MobileMenuProvider>
 	);
 }

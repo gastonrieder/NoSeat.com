@@ -10,6 +10,8 @@ import type { Frontmatter } from "types/frontmatter";
 import { GetStaticPropsContext } from "next";
 import { ThemesDocsPage } from "@components/ThemesDocsPage";
 import { Footer } from "@components/Footer";
+import { SEOHead } from "@components/SEOHead";
+import { Breadcrumbs } from "@components/Breadcrumbs";
 
 type Doc = {
   frontmatter: Frontmatter;
@@ -18,9 +20,38 @@ type Doc = {
 };
 export default function CityDoc({ frontmatter, code, headerImage }: Doc) {
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
+  
+  const citySchema = {
+    "@context": "https://schema.org",
+    "@type": "TravelGuide",
+    "name": `${frontmatter.metaTitle} Public Transport Guide`,
+    "description": frontmatter.metaDescription,
+    "image": headerImage,
+    "publisher": {
+      "@type": "Organization",
+      "name": "NoSeat.co",
+      "url": "https://noseat.co"
+    }
+  };
+
   return (
     <Flex direction="column" style={{ minHeight: '100vh' }}>
+      <SEOHead 
+        city={frontmatter.metaTitle}
+        country={frontmatter.slug.split('/')[2]}
+        description={frontmatter.metaDescription}
+        slug={frontmatter.slug}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(citySchema) }}
+      />
       <ThemesDocsPage>
+        <Breadcrumbs 
+          continent={frontmatter.slug.split('/')[0]}
+          country={frontmatter.slug.split('/')[1]}
+          city={frontmatter.metaTitle}
+        />
         <Box mb="2">
           <img 
             src={headerImage} 
@@ -55,9 +86,8 @@ export default function CityDoc({ frontmatter, code, headerImage }: Doc) {
         <Footer />
       </Flex>
     </Flex>
-  );}
-  
-  export async function getStaticProps(
+  );
+}  export async function getStaticProps(
   context: GetStaticPropsContext<{ slug: string[] }>,
 ) {
   const { frontmatter, code } = await getMdxBySlug(
