@@ -54,7 +54,7 @@ export const ThemesMDXComponents = {
     <td {...props} style={{ 
       borderBottom: '1px solid var(--gray-4)', 
       padding: '0.5rem', 
-      color: props.children.$$typeof ? 'white' : 'var(--gray-11)',
+      color: props.children.$$typeof ? 'white' : 'var(--gray-11)',  
     }} />
   ),
 

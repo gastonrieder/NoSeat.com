@@ -16,23 +16,18 @@ import "./syntax-highlighting.css";
 
 function Pages({ Component, pageProps }: AppProps) {
 	return (
-		<Theme 
-			accentColor="indigo" 
-			className="radix-themes-custom-fonts"
-			appearance="inherit"
-		>
+		<Theme accentColor="indigo" className="radix-themes-custom-fonts" appearance="inherit">
 			<Head>
-				<title>NoSeat.co - Public Transport Guides</title>
-				<meta property="og:title" content="NoSeat" />
-				<meta property="og:description" content="Your guide to public transport payments" />
-				<meta property="og:url" content="https://noseat.co" />
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<meta name="robots" content="index, follow" />
+				<meta property="og:type" content="website" />
+				<meta property="og:site_name" content="NoSeat.co" />
 			</Head>
 			<Favicon />
 			<Component {...pageProps} />
 		</Theme>
 	);
-}
-function App(props: AppProps) {
+}function App(props: AppProps) {
 	useAnalytics();
 
 	return (
