@@ -55,7 +55,7 @@ export default function Home({ frontmatter, code, headerImage }: HomeProps) {
         <Box style={{ height: 'var(--space-4)' }} />
 
         <Box mb="4">
-          <Text size="3" weight="bold" mb="2">Pick a popular city here or search for yours below:</Text>
+          <Text size="3" weight="bold" mb="2">Pick a popular city here or search for yours:</Text>
           <Flex gap="2">
             <Link href="/cities/europe/uk/london">London</Link>
             <Link href="/cities/asia/hong-kong/hong-kong">Hong Kong</Link>
