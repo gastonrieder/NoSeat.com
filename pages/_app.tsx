@@ -18,16 +18,20 @@ function Pages({ Component, pageProps }: AppProps) {
 	return (
 		<Theme accentColor="indigo" className="radix-themes-custom-fonts" appearance="inherit">
 			<Head>
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1, user-scalable=0" />
 				<meta name="robots" content="index, follow" />
 				<meta property="og:type" content="website" />
 				<meta property="og:site_name" content="NoSeat.co" />
+				<meta property="og:description" content="Your guide to paying for public transport in cities around the world" />
+				<meta property="og:url" content="https://noseat.co" />
 			</Head>
 			<Favicon />
 			<Component {...pageProps} />
 		</Theme>
 	);
-}function App(props: AppProps) {
+}
+
+function App(props: AppProps) {
 	useAnalytics();
 
 	return (
