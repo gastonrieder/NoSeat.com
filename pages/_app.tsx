@@ -22,7 +22,7 @@ function Pages({ Component, pageProps }: AppProps) {
 				<meta name="robots" content="index, follow" />
 				<meta property="og:type" content="website" />
 				<meta property="og:site_name" content="NoSeat.co" />
-				<meta property="og:description" content="Your guide to paying for public transport in cities around the world" />
+				<meta property="og:description" content="Your guide to paying for public transport around the world" />
 				<meta property="og:url" content="https://noseat.co" />
 			</Head>
 			<Favicon />

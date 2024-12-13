@@ -11,6 +11,7 @@ import { Footer } from "@components/Footer";
 import { PrimitivesSearchDesktop } from "@components/PrimitivesSearchDesktop";
 import { DocsNav } from "@components/DocsNav";
 import { themesRoutes } from "@utils/themesRoutes";
+import Link from "next/link"
 
 type HomeProps = {
   frontmatter: {
@@ -47,9 +48,20 @@ export default function Home({ frontmatter, code, headerImage }: HomeProps) {
         <Heading as="h1" size="8" mb="2">
           {frontmatter.metaTitle}
         </Heading>
-        <Text size="3" mb="4">
+        <Text size="4" mb="20">
           {frontmatter.metaDescription}
         </Text>
+
+        <Box style={{ height: 'var(--space-4)' }} />
+
+        <Box mb="4">
+          <Text size="3" weight="bold" mb="2">Pick a popular city here or search for yours below:</Text>
+          <Flex gap="2">
+            <Link href="/cities/europe/uk/london">London</Link>
+            <Link href="/cities/asia/hong-kong/hong-kong">Hong Kong</Link>
+            <Link href="/cities/europe/netherlands/amsterdam">Amsterdam</Link>
+          </Flex>
+        </Box>
 
         <Box 
           display={{ initial: 'block', md: 'none' }} 
