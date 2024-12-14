@@ -47,14 +47,18 @@ export const ThemesMDXComponents = {
   ),
 
   th: (props: any) => (
-    <th {...props} style={{ borderBottom: '2px solid var(--gray-5)', padding: '0.5rem', textAlign: 'left' }} />
+    <th {...props} style={{ 
+      borderBottom: '2px solid var(--gray-5)', 
+      padding: '0.5rem', 
+      textAlign: 'left', 
+    }} />
   ),
 
   td: (props: any) => (
     <td {...props} style={{ 
       borderBottom: '1px solid var(--gray-4)', 
       padding: '0.5rem', 
-      color: props.children.$$typeof ? 'white' : 'var(--gray-11)',  
+      color: props.children.$$typeof ? 'var(--gray-12)' : 'var(--gray-11)',  
     }} />
   ),
 
